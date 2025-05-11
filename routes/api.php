@@ -8,12 +8,14 @@ use App\Http\Controllers\Api\ClientController;
 //     return $request->user();
 // })->middleware('auth:sanctum');
 
-Route::get('/clients', [ClientController::class, 'index']);
+// Route::get('/clients', [ClientController::class, 'index']);
 
-Route::get('/clients/{id}', [ClientController::class, 'show']);
+// Route::get('/clients/{id}', [ClientController::class, 'show']);
 
-Route::post('/clients', [ClientController::class, 'store']);
+// Route::post('/clients', [ClientController::class, 'store']);
 
-Route::put('/clients/{id}', [ClientController::class, 'update']);
+// Route::put('/clients/{id}', [ClientController::class, 'update']);
 
-Route::delete('/clients/{id}', [ClientController::class, 'destroy']);
+// Route::delete('/clients/{id}', [ClientController::class, 'destroy']);
+
+Route::resource('clients', ClientController::class);
