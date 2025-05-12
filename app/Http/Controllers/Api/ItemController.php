@@ -40,6 +40,7 @@ class ItemController extends Controller
                 'message' => 'Artículo no encontrado',
                 'status' => 404,
             ];
+
             return response()->json($data, 404);
         }
 
@@ -47,6 +48,7 @@ class ItemController extends Controller
             'item' => $item,
             'status' => 200,
         ];
+
         return response()->json($data, 200);
     }
     
@@ -64,6 +66,7 @@ class ItemController extends Controller
                 'errors' => $validator->errors(),
                 'status' => 422,
             ];
+
             return response()->json($data, 422);
         }
 
@@ -74,6 +77,7 @@ class ItemController extends Controller
                 'message' => 'Error creando el artículo',
                 'status' => 500,
             ];
+
             return response()->json($data, 500);
         }
 
@@ -95,6 +99,7 @@ class ItemController extends Controller
                 'message' => 'Artículo no encontrado',
                 'status' => 404,
             ];
+
             return response()->json($data, 404);
         }
 
@@ -110,6 +115,7 @@ class ItemController extends Controller
                 'errors' => $validator->errors(),
                 'status' => 422,
             ];
+
             return response()->json($data, 422);
         }
 
@@ -120,6 +126,7 @@ class ItemController extends Controller
                 'message' => 'Error actualizando el artículo',
                 'status' => 500,
             ];
+
             return response()->json($data, 500);
         }
 
@@ -128,6 +135,7 @@ class ItemController extends Controller
             'item' => $item,
             'status' => 200,
         ];
+
         return response()->json($data, 200);
     }
 
@@ -140,6 +148,7 @@ class ItemController extends Controller
                 'message' => 'Artículo no encontrado',
                 'status' => 404,
             ];
+            
             return response()->json($data, 404);
         }
 

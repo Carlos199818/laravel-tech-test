@@ -41,6 +41,7 @@ class ClientController extends Controller
                 'message' => 'Cliente no encontrado',
                 'status' => 404,
             ];
+
             return response()->json($data, 404);
         }
 
@@ -48,6 +49,7 @@ class ClientController extends Controller
             'client' => $client,
             'status' => 200,
         ];
+
         return response()->json($data, 200);
     }
 
@@ -65,6 +67,7 @@ class ClientController extends Controller
                 'errors' => $validator->errors(),
                 'status' => 422,
             ];
+
             return response()->json($data, 422);
         }
 
@@ -79,6 +82,7 @@ class ClientController extends Controller
                 'message' => 'Error creando el cliente',
                 'status' => 500,
             ];
+
             return response()->json($data, 500);
         }
 
@@ -100,6 +104,7 @@ class ClientController extends Controller
                 'message' => 'Cliente no encontrado',
                 'status' => 404,
             ];
+
             return response()->json($data, 404);
         }
 
@@ -115,6 +120,7 @@ class ClientController extends Controller
                 'errors' => $validator->errors(),
                 'status' => 422,
             ];
+
             return response()->json($data, 422);
         }
 
@@ -129,6 +135,7 @@ class ClientController extends Controller
                 'message' => 'Error actualizando el cliente',
                 'status' => 500,
             ];
+
             return response()->json($data, 500);
         }
 
@@ -137,6 +144,7 @@ class ClientController extends Controller
             'client' => $client,
             'status' => 200,
         ];
+
         return response()->json($data, 200);
     }
 
@@ -149,6 +157,7 @@ class ClientController extends Controller
                 'message' => 'Cliente no encontrado',
                 'status' => 404,
             ];
+
             return response()->json($data, 404);
         }
 
@@ -158,6 +167,7 @@ class ClientController extends Controller
             'message' => 'Cliente eliminado correctamente',
             'status' => 200,
         ];
+        
         return response()->json($data, 200);
     }
 }

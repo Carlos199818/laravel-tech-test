@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tblclient', function (Blueprint $table) {
-            $table->id('client_id');
+        Schema::create('tblcliente', function (Blueprint $table) {
+            $table->id('cliente_id');
             $table->string('nombre');
             $table->string('telefono');
             $table->string('tipo_cliente');
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tblclient');
+        Schema::dropIfExists('tblcliente');
     }
 };

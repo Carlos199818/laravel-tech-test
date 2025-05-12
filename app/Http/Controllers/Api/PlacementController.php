@@ -39,6 +39,7 @@ class PlacementController extends Controller
                 'message' => 'Colocación no encontrada',
                 'status' => 404,
             ];
+
             return response()->json($data, 404);
         }
 
@@ -46,6 +47,7 @@ class PlacementController extends Controller
             'placement' => $placement,
             'status' => 200,
         ];
+
         return response()->json($data, 200);
     }
 
@@ -58,7 +60,13 @@ class PlacementController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return response()->json($validator->errors(), 422);
+            $data = [
+                'message' => 'Error validando los datos',
+                'errors' => $validator->errors(),
+                'status' => 422,
+            ];
+            
+            return response()->json($data, 422);
         }
 
         $placement = Placement::create($request->all());
@@ -80,6 +88,7 @@ class PlacementController extends Controller
                 'message' => 'Colocación no encontrada',
                 'status' => 404,
             ];
+
             return response()->json($data, 404);
         }
 
@@ -95,6 +104,7 @@ class PlacementController extends Controller
                 'errors' => $validator->errors(),
                 'status' => 422,
             ];
+
             return response()->json($data, 422);
         }
 
@@ -117,6 +127,7 @@ class PlacementController extends Controller
                 'message' => 'Colocación no encontrada',
                 'status' => 404,
             ];
+
             return response()->json($data, 404);
         }
 
@@ -130,33 +141,4 @@ class PlacementController extends Controller
         return response()->json($data, 200);
     }
 
-    public function getItems($id)
-    {
-        $placement = Placement::find($id);
-
-        if (!$placement) {
-            $data = [
-                'message' => 'Colocación no encontrada',
-                'status' => 404,
-            ];
-            return response()->json($data, 404);
-        }
-
-        $items = $placement->item;
-
-        if ($items->isEmpty()) {
-            $data = [
-                'message' => 'No hay artículos disponibles para esta colocación',
-                'status' => 200,
-            ];
-            return response()->json($data, 200);
-        }
-
-        $data = [
-            'items' => $items,
-            'status' => 200,
-        ];
-
-        return response()->json($data, 200);
-    }
 }
